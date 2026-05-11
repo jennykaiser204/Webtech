@@ -1,13 +1,39 @@
 <template>
-    <h1>This is a navigation bar</h1>
+  <div>
+    <h1>Meine Tasks</h1>
+
+    <ol>
+      <li v-for="task in tasks" :key="task">
+        {{ task }}
+      </li>
+    </ol>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'AppNavigation'
+  data () {
+    return {
+      tasks: [
+        'Hausaufgaben',
+        'Vue lernen',
+        'Projekt machen',
+        'Einkaufen',
+        'Workout'
+      ]
+    }
+  }
 }
 </script>
 
-<style scoped>
+<style>
+div {
+  border: solid black 1px;
+  width: 80%;
+  padding: 10px;
+}
 
+li {
+  margin: 8px 0;
+}
 </style>
